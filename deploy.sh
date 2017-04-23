@@ -25,16 +25,10 @@ rm -rf out/* || exit 0
 
 # Run our compile script
 doCompile
-cp -R dist/ out/
-cd dist
-echo "### DIST ###"
-ls
-cd ..
+cp dist/* out/
 
 # Now let's go have some fun with the cloned repo
 cd out
-echo "### OUT ###"
-ls
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
