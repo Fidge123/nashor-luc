@@ -10,6 +10,7 @@ before_script:
 script:
 - ng build --aot --prod --progress="false"
 after_success:
+- npm --prefix ./functions install ./functions
 - firebase deploy --token $TOKEN
 env:
   global:
