@@ -5,12 +5,12 @@ branches:
   only:
   - master
 before_script:
+- npm install -g firebase-tools
 - npm install -g @angular/cli
 script:
 - ng build --aot --prod --progress="false"
-deploy:
-  skip_cleanup: true
-  provider: firebase
-  token:
-    secure: iBFpQ3Tq8fOpA/MR2pXWJLv2hkmil92HP+wZl3joRHAPduiEDZAf9ZvSPzYpjImCuP4TRWIiM2CnNb7qxzXjD3aHnx5sCnxxiZyVSIfA91FGc5Kd17yXOKKsr7g7npJ/097Sc/VwNyXji46gpq0pPcPwjQmYOZMg71SVn9rpJpeyuwV1lKTwndIZ2piFBbTq2NWTpjvgZgILL2tSm1WebsBX/PVIxkdtH32qHWHV1Q8+ICYv3XK2NW/8Mrkv9KsOtGu2JWtMLm6x+foam9wC5iHRcwAvT1m1V/+fcAiOGPEgRXw1j8VNTAUBL2SOR07hBBoL4jRzQQHCrT/Uw/ssNny6tlzkKm1y7SjSSnbf9G2A1Nsqwzz28vs8rZ3/hb9cM3LZeeAeIkX1MApGLM/dkoOHgxXm2MQ2ZBZsAPFUjBeowxooH1xThCQ9tedKRHIoulqTn/F+ukvhNBBap8a2AVUkG2/D+km0aVEZaPh3Jc68Su2nAJCkkesupNir4MDcL6uYUM0QjrhuquOszQLooHx4l2O9qVIjjpMo+kdD/90fVSjur+ryyu8Bwmute4LujekZ2E6agACYGVMUGqQZBfXYh9/9tLFjNBpCZjOQQ9bttN47MzcieIwy0nytJ++NW7033nsOcaqApHdH8T8pHJUn21+cGPSbsHZZcqMxFcg=
-  project: nashor-luc
+after_success:
+- firebase deploy --token $TOKEN
+env:
+  global:
+    secure: iUQgjmgOFiKkwlTWSpVbslP6RxtLDjR+yQrD3tFDHkxsPSCxlDLPmseyKeIPX19qjZ/tCRRVaz+LWeDc0tr2eQPX1GIYd6FpmZs+KZ/cRjiw+mNeUUrpPBGbVhgb10x0xHPj4vD3f2Hk7OlzX/fn3OZE3uUzj4lagPQvb45cQ4m603itAMeZWGvBCRqSX/cQBs/9M4EzvVui4iwGYx+pSP2KBB65+hV6oq2VzuuKK10xRo/k9B3Mf5ldTjeCYKaKqGBSKiOcTZq7MpOUsErK4RK4xqRcsfXoTxceIoRNcYlLuejqsoePhP4wOj6nmIfYNRubLXJzLtqJNAI7ZHit4M2nGISDpSDrzcKTL/o03GZ/32GMe8Ps+YvU6s0yUAA928ie5VUHhWdkPzhIGG5+Hz6LmyjW6N6WhYczSKQ0zUr7U7ywwqGV/G8fumOPMNDeIPZHcZw2xQYUkk5md0hCMlVPTQiclKwcUevRnTZerwAE1wQ+lF9o/IyfzW3l3T4fppU1HOUQL6snGRizkAr4E7T85WQF6wy+NToMgsgQuSOFfqwW4f9jB1es8c+Z3ws2mtOmOB/WrnBYVZnVYhPP6xW4e3hbugWapz+mVayQg2C+X01rofShbEUmQ4e0B8XNCLg027I92VJaTCCcNwRuHHldeWxv6X4HYOAB7XOlQDs=
