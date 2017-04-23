@@ -6,7 +6,7 @@
 /out-tsc
 
 # dependencies
-/node_modules
+node_modules
 
 # IDEs and editors
 /.idea
@@ -42,3 +42,4 @@ testem.log
 Thumbs.db
 
 .vscode
+firebase-debug.log
