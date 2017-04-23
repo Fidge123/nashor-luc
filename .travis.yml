@@ -4,12 +4,13 @@ node_js:
 branches:
   only:
   - master
-before_install:
+before_script:
 - npm install -g @angular/cli
-install:
+script:
 - npm install
 - ng build --aot --prod --progress="false"
 deploy:
+  skip_cleanup: true
   provider: firebase
   token:
     secure: iBFpQ3Tq8fOpA/MR2pXWJLv2hkmil92HP+wZl3joRHAPduiEDZAf9ZvSPzYpjImCuP4TRWIiM2CnNb7qxzXjD3aHnx5sCnxxiZyVSIfA91FGc5Kd17yXOKKsr7g7npJ/097Sc/VwNyXji46gpq0pPcPwjQmYOZMg71SVn9rpJpeyuwV1lKTwndIZ2piFBbTq2NWTpjvgZgILL2tSm1WebsBX/PVIxkdtH32qHWHV1Q8+ICYv3XK2NW/8Mrkv9KsOtGu2JWtMLm6x+foam9wC5iHRcwAvT1m1V/+fcAiOGPEgRXw1j8VNTAUBL2SOR07hBBoL4jRzQQHCrT/Uw/ssNny6tlzkKm1y7SjSSnbf9G2A1Nsqwzz28vs8rZ3/hb9cM3LZeeAeIkX1MApGLM/dkoOHgxXm2MQ2ZBZsAPFUjBeowxooH1xThCQ9tedKRHIoulqTn/F+ukvhNBBap8a2AVUkG2/D+km0aVEZaPh3Jc68Su2nAJCkkesupNir4MDcL6uYUM0QjrhuquOszQLooHx4l2O9qVIjjpMo+kdD/90fVSjur+ryyu8Bwmute4LujekZ2E6agACYGVMUGqQZBfXYh9/9tLFjNBpCZjOQQ9bttN47MzcieIwy0nytJ++NW7033nsOcaqApHdH8T8pHJUn21+cGPSbsHZZcqMxFcg=
