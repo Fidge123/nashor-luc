@@ -1,17 +1,18 @@
 language: node_js
 node_js:
-  - node
-
+- node
 branches:
   only:
   - master
-
 before_script:
-  - npm install -g firebase-tools
-  - npm install -g @angular/cli
-
+- npm install -g firebase-tools
+- npm install -g @angular/cli
 script:
-  - ng build --aot --prod --progress="false"
-
+- ng build --aot --prod --progress="false"
 after_success:
-  - firebase deploy --token $FIREBASE_TOKEN
+- firebase deploy --token $FIREBASE_TOKEN
+deploy:
+  provider: firebase
+  token:
+    secure: A8K/Uhqyeq2ZKpDHEt/bwwOtElQqhPVrKXYtfFULFy7jo80MCazzHwQuFetuiqdfj4vtRMlSK32J0JyVgRrFM6AKgxWkq7V7I19qPXCx3jgS0bmw6ec2xSDfmdeu8ZHwk2W2Wosek9jKJj51q5gZ+7d5+uebgtRUV2w24WbC0E40TP7lm+6wxyEb93ppyEGR671zK0zvmrjDAuPCBKPTAzINAqBcGyUL/9hMK7WJX6zvklQyM62U3nyqaoOJiEJNBg2mU2X8zQ2S807ND5cD6hznQAovN95YeAhQgFjkqAj/M/3DdPinTfL2DzNa6h3QGVUtEGYmRXhJDzTL+NQXC7z2L3e5H9w3a4L0Dx8m0DsVUaDAlSXc5kns3YhRP8RxsOle04X9tfoN8sSOxezG+wQCov3UHBHJJmdKwJBG+T9Ly3ozG7kz+aSuXnW9fMLDjIOpn90Na/ROsilRbESxD/IC4MwEaqixPnd4NxLPdohqsOYg1+yjlt7P8pOQ9GjCfVvRCMsacoaK5yelzA46twg81ZpIyc6n/Fh0aGqKChPVuE2QhqVAyZLbc1z6oBd79cAJsqANyML1B+wrClvGw3Q1iqfPLIYG8FXIt1g4pmQqWSw2FnA+HjCxwI1nwnTdGhyws43+jV1VqFEkEBc4+/Vavu5eU3HbJ6zqY8/b544=
+  project: nashor-luc
